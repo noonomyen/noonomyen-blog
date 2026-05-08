@@ -45,11 +45,11 @@ const className = Astro.props.class;
                 return;
 
             const id = this.dataset.id;
-            const btn = this.querySelector('.expand-btn');
+            const btn = this.querySelector(".expand-btn");
             const wrapper = this.querySelector(`#${id}`)
-            btn!.addEventListener('click', () => {
-                wrapper!.classList.remove('collapsed');
-                btn!.classList.add('hidden');
+            btn!.addEventListener("click", () => {
+                wrapper!.classList.remove("collapsed");
+                btn!.classList.add("hidden");
             })
         }
     }

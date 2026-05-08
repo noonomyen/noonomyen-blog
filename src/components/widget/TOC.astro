@@ -55,7 +55,7 @@ const maxLevel = siteConfig.toc.depth;
                 }]}>{removeTailingHash(heading.text)}</div>
             </a>
     )}
-    <div id="active-indicator" style="opacity: 0" class:list={[{'hidden': headings.length == 0}, "-z-10 absolute bg-[var(--toc-btn-hover)] left-0 right-0 rounded-xl transition-all " +
+    <div id="active-indicator" style="opacity: 0" class:list={[{"hidden": headings.length == 0}, "-z-10 absolute bg-[var(--toc-btn-hover)] left-0 right-0 rounded-xl transition-all " +
         "group-hover:bg-transparent border-2 border-[var(--toc-btn-hover)] group-hover:border-[var(--toc-btn-active)] border-dashed"]}></div>
 </table-of-contents>}
 
@@ -202,13 +202,13 @@ class TableOfContents extends HTMLElement {
 
     connectedCallback() {
         // wait for the onload animation to finish, which makes the `getBoundingClientRect` return correct values
-        const element = document.querySelector('.prose');
+        const element = document.querySelector(".prose");
         if (element) {
-            element.addEventListener('animationend', () => {
+            element.addEventListener("animationend", () => {
                 this.init();
             }, { once: true });
         } else {
-            console.debug('Animation element not found');
+            console.debug("Animation element not found");
         }
     };
 
@@ -226,7 +226,7 @@ class TableOfContents extends HTMLElement {
         this.activeIndicator = document.getElementById("active-indicator");
 
         this.tocEntries = Array.from(
-            document.querySelectorAll<HTMLAnchorElement>("#toc a[href^='#']")
+            document.querySelectorAll<HTMLAnchorElement>("#toc a[href^=\"#\"]")
         );
 
         if (this.tocEntries.length === 0) return;
