@@ -1,0 +1,7 @@
+-- Redirect rules
+-- Format: abs-path target status-code
+-- Use -- for comment lines
+-- Use "" to wrap values containing spaces
+-- Example: /old-path /new-path 301
+
+/about https://noonomyen.com/about 302

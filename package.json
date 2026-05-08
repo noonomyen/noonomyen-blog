@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev",
-    "start": "NODE_ENV=production bun run dist/server/entry.mjs",
+    "start": "NODE_ENV=production bun run server.ts",
     "check": "bunx --bun astro check",
     "build": "bun run scripts/generate-favicon.js && bunx --bun astro build && pagefind --site dist",
     "preview": "bunx --bun astro preview",
@@ -21,6 +21,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/svelte": "7.2.3",
     "@astrojs/tailwind": "^6.0.2",
+    "@elysiajs/static": "^1.4.10",
     "@expressive-code/core": "^0.41.7",
     "@expressive-code/plugin-collapsible-sections": "^0.41.7",
     "@expressive-code/plugin-line-numbers": "^0.41.7",

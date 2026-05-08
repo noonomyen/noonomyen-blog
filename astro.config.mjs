@@ -1,4 +1,4 @@
-import node from "@astrojs/node";
+import { parseRedirectsToAstroMap, REDIRECTS_FILE } from "./src/utils/parse-redirects.ts";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
@@ -28,15 +28,13 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
 	output: "static",
-	adapter: node({
-		mode: "standalone",
-	}),
 	site:
 		process.env.NODE_ENV === "development"
 			? "http://localhost:4321"
 			: "https://blog.noonomyen.com",
 	base: "/",
 	trailingSlash: "never",
+	redirects: parseRedirectsToAstroMap(REDIRECTS_FILE),
 	integrations: [
 		tailwind({
 			nesting: true,
