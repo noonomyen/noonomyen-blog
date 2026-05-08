@@ -33,7 +33,7 @@ export default defineConfig({
 	}),
 	site: process.env.NODE_ENV === "development" ? "http://localhost:4321" : "https://blog.noonomyen.com",
 	base: "/",
-	trailingSlash: "always",
+	trailingSlash: "never",
 	integrations: [
 		tailwind({
 			nesting: true,
