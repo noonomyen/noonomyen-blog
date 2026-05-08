@@ -5,7 +5,7 @@ import { astroStaticPlugin, contentStaticPlugin } from "./static";
 const PORT = Number.parseInt(process.env.PORT ?? "4321", 10);
 const SYSTEM_DIR = "./dist/system";
 
-const app: Elysia<any, any, any, any, any, any, any> = new Elysia()
+const app = new Elysia()
 	// API routes
 	.use(apiPlugin)
 	// 1. Serve hashed/immutable Astro static assets

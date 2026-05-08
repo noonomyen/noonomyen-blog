@@ -5,7 +5,7 @@ const ASTRO_DIR = "./dist/astro-static";
 const CONTENT_DIR = "./dist/content-static";
 
 // 1. Astro Hashed Static Assets (immutable 7 days cache)
-export const astroStaticPlugin: Elysia<any, any, any, any, any, any, any> = new Elysia().use(
+export const astroStaticPlugin = new Elysia().use(
 	staticPlugin({
 		assets: ASTRO_DIR,
 		prefix: "/",
@@ -16,7 +16,7 @@ export const astroStaticPlugin: Elysia<any, any, any, any, any, any, any> = new 
 );
 
 // 2. Content HTML Static Pages (revalidate max-age=0 cache)
-export const contentStaticPlugin: Elysia<any, any, any, any, any, any, any> = new Elysia()
+export const contentStaticPlugin = new Elysia()
 	.onBeforeHandle(({ set, path, redirect }) => {
 		if (path.endsWith("/index.html")) {
 			return redirect(path.slice(0, -11) || "/", 301);
