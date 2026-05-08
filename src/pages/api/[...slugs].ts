@@ -2,10 +2,11 @@ import { Elysia } from "elysia";
 
 export const prerender = false;
 
-const app = new Elysia({ prefix: "/api" }).get(
-	"/",
-	() => "Hello from Elysia in Astro",
-);
+const app = new Elysia({ prefix: "/api" })
+	.onRequest(({ set }) => {
+		set.headers["Cache-Control"] = "no-store";
+		set.headers["X-Robots-Tag"] = "noindex, nofollow";
+	});
 
 const handle = ({ request }: { request: Request }) => app.handle(request);
 
