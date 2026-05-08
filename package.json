@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "bunx --bun astro dev",
-    "start": "NODE_ENV=production bun run src/server.ts",
+    "start": "NODE_ENV=production ./dist/server",
     "check": "bunx --bun astro check",
-    "build": "bun run scripts/generate-favicon.js && bunx --bun astro build && pagefind --site dist",
+    "build": "bun run scripts/generate-favicon.js && bunx --bun astro build && bun run scripts/rearrange-dist.ts && pagefind --site dist/content-static && bun build --compile ./src/server/index.ts --outfile ./dist/server",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
