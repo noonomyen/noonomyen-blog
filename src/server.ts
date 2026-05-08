@@ -1,8 +1,8 @@
 import { staticPlugin } from "@elysiajs/static";
 import { Elysia } from "elysia";
-import { REDIRECTS_FILE, parseRedirects } from "./src/utils/parse-redirects.ts";
+import { parseRedirects, REDIRECTS_FILE } from "./utils/parse-redirects.ts";
 
-const PORT = parseInt(process.env.PORT ?? "4321", 10);
+const PORT = Number.parseInt(process.env.PORT ?? "4321", 10);
 const STATIC_DIR = "./dist";
 
 const redirectEntries = parseRedirects(REDIRECTS_FILE);
@@ -26,20 +26,21 @@ const app = new Elysia()
 		}
 	})
 	// API routes
-	.group("/api", (api) =>
-		api
-			.onRequest(({ set }) => {
+	.group(
+		"/api",
+		(api) =>
+			api.onRequest(({ set }) => {
 				set.headers["Cache-Control"] = "no-store";
 				set.headers["X-Robots-Tag"] = "noindex, nofollow";
-			})
-			// Add API routes here
+			}),
+		// Add API routes here
 	)
 	// Serve static files from dist/
 	.use(
 		staticPlugin({
 			assets: STATIC_DIR,
 			prefix: "/",
-			noExtension: true,
+			extension: true,
 			indexHTML: true,
 		}),
 	)

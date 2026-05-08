@@ -15,8 +15,7 @@ export type AstroRedirectMap = Record<
 function tokenize(line: string): string[] {
 	const tokens: string[] = [];
 	const regex = /(?:"([^"]*)")|(\S+)/g;
-	let match: RegExpExecArray | null;
-	while ((match = regex.exec(line)) !== null) {
+	for (const match of line.matchAll(regex)) {
 		tokens.push(match[1] !== undefined ? match[1] : match[2]);
 	}
 	return tokens;
@@ -41,7 +40,7 @@ export function parseRedirects(filePath: string): RedirectEntry[] {
 
 		const source = tokens[0];
 		const destination = tokens[1];
-		const status = tokens[2] ? parseInt(tokens[2], 10) : 301;
+		const status = tokens[2] ? Number.parseInt(tokens[2], 10) : 301;
 
 		redirects.push({ source, destination, status });
 	}
@@ -53,7 +52,10 @@ export function parseRedirectsToAstroMap(filePath: string): AstroRedirectMap {
 	const entries = parseRedirects(filePath);
 	const map: AstroRedirectMap = {};
 	for (const entry of entries) {
-		map[entry.source] = { status: entry.status, destination: entry.destination };
+		map[entry.source] = {
+			status: entry.status,
+			destination: entry.destination,
+		};
 	}
 	return map;
 }
