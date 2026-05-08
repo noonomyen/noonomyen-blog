@@ -6,7 +6,7 @@
     "dev": "bunx --bun astro dev",
     "start": "NODE_ENV=production bun run dist/server/entry.mjs",
     "check": "bunx --bun astro check",
-    "build": "bunx --bun astro build && pagefind --site dist",
+    "build": "bun run scripts/generate-favicon.js && bunx --bun astro build && pagefind --site dist",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
