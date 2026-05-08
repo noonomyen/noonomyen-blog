@@ -31,7 +31,7 @@ export default defineConfig({
 	adapter: node({
 		mode: "standalone"
 	}),
-	site: "https://fuwari.vercel.app/",
+	site: process.env.NODE_ENV === "development" ? "http://localhost:4321" : "https://blog.noonomyen.com",
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
