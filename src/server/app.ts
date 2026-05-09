@@ -1,7 +1,10 @@
 import { Elysia } from "elysia";
+import {
+	parseRedirectsToAstroMap,
+	REDIRECTS_FILE,
+} from "../utils/parse-redirects";
 import { apiPlugin } from "./api";
 import { staticAssetsPlugin } from "./static";
-import { parseRedirectsToAstroMap, REDIRECTS_FILE } from "../utils/parse-redirects";
 
 const SYSTEM_DIR = "./dist/system";
 const redirects = parseRedirectsToAstroMap(REDIRECTS_FILE);
@@ -11,7 +14,10 @@ export const app = new Elysia()
 	.onBeforeHandle(({ path, redirect }) => {
 		const rule = redirects[path];
 		if (rule) {
-			return redirect(rule.destination, rule.status as any);
+			return redirect(
+				rule.destination,
+				rule.status as 301 | 302 | 303 | 307 | 308,
+			);
 		}
 	})
 	// API routes
