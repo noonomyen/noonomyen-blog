@@ -34,10 +34,10 @@ export async function resolveOgImage(
 
 	// 3. Local relative path (source folder)
 	// Try to resolve via glob
-	let normalizedPath = path
+	const normalizedPath = path
 		.normalize(path.join("../", "/", src))
 		.replace(/\\/g, "/");
-	
+
 	const file = files[normalizedPath];
 
 	if (file) {

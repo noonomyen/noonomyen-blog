@@ -73,7 +73,9 @@ if (!finalOgImage && siteConfig.banner.enable) {
 	finalOgImage = siteConfig.banner.src;
 }
 
-const ogImageUrl = await resolveOgImage(typeof finalOgImage === "string" ? finalOgImage : undefined);
+const ogImageUrl = await resolveOgImage(
+	typeof finalOgImage === "string" ? finalOgImage : undefined,
+);
 // If resolveOgImage returns undefined but finalOgImage was ImageMetadata, handle it if needed
 // (Current resolveOgImage handles string, but we can extend or handle Metadata here)
 
