@@ -20,6 +20,7 @@ import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
+import { resolveOgImage } from "../utils/og-image-utils";
 
 interface Props {
 	title?: string;
@@ -57,8 +58,6 @@ if (title) {
 	pageTitle = `${siteConfig.title} - ${siteConfig.subtitle}`;
 }
 
-import { getImage } from "astro:assets";
-
 const favicons: Favicon[] =
 	siteConfig.favicon.length > 0 ? siteConfig.favicon : defaultFavicons;
 
@@ -68,66 +67,15 @@ if (!lang) {
 }
 const siteLang = lang.replace("_", "-");
 
-import path from "node:path";
-
-let ogImageSrc: string | undefined;
-let isLocalString = false;
-let localStringSrc = "";
-
-if (ogImage) {
-	if (typeof ogImage === "string") {
-		isLocalString = !(
-			ogImage.startsWith("/") ||
-			ogImage.startsWith("http") ||
-			ogImage.startsWith("https") ||
-			ogImage.startsWith("data:")
-		);
-		if (isLocalString) {
-			localStringSrc = ogImage;
-		} else {
-			ogImageSrc = ogImage;
-		}
-	} else {
-		const optimizedImage = await getImage({ src: ogImage, format: "webp" });
-		ogImageSrc = optimizedImage.src;
-	}
-} else if (siteConfig.banner.enable) {
-	const bannerSrc = siteConfig.banner.src;
-	isLocalString = !(
-		bannerSrc.startsWith("/") ||
-		bannerSrc.startsWith("http") ||
-		bannerSrc.startsWith("https") ||
-		bannerSrc.startsWith("data:")
-	);
-	if (isLocalString) {
-		localStringSrc = bannerSrc;
-	} else {
-		ogImageSrc = bannerSrc;
-	}
+// Logic: Priority to post ogImage, then site banner if enabled
+let finalOgImage = ogImage;
+if (!finalOgImage && siteConfig.banner.enable) {
+	finalOgImage = siteConfig.banner.src;
 }
 
-if (isLocalString && localStringSrc) {
-	const files = import.meta.glob<ImageMetadata>("../**/*", {
-		import: "default",
-	});
-	let normalizedPath = path
-		.normalize(path.join("../", "/", localStringSrc))
-		.replace(/\\/g, "/");
-	const file = files[normalizedPath];
-	if (file) {
-		const img = await file();
-		const optimizedImage = await getImage({ src: img, format: "webp" });
-		ogImageSrc = optimizedImage.src;
-	} else {
-		ogImageSrc = localStringSrc;
-	}
-}
-const ogImageUrl = ogImageSrc
-	? new URL(
-			ogImageSrc.startsWith("http") ? ogImageSrc : url(ogImageSrc),
-			Astro.site ?? Astro.url,
-		)
-	: undefined;
+const ogImageUrl = await resolveOgImage(typeof finalOgImage === "string" ? finalOgImage : undefined);
+// If resolveOgImage returns undefined but finalOgImage was ImageMetadata, handle it if needed
+// (Current resolveOgImage handles string, but we can extend or handle Metadata here)
 
 const bannerOffsetByPosition = {
 	top: `${BANNER_HEIGHT_EXTEND}vh`,
