@@ -19,10 +19,7 @@ COPY public ./public
 COPY scripts ./scripts
 
 # Build the application
-# 1. Astro static build
-# 2. Rearrange dist directories
-# 3. Build standalone server binary
-RUN bun run build
+RUN bun run build:prod
 
 # Stage 2: Runtime
 FROM alpine:3.22.4 AS runner
@@ -38,10 +35,10 @@ COPY --from=builder /app/dist ./dist
 
 # Set environment variables
 ENV NODE_ENV=production
-ENV PORT=4321
+ENV PORT=80
 
 # Expose the port
-EXPOSE 4321
+EXPOSE 80
 
 # Run the standalone binary
 CMD ["/app/dist/server"]

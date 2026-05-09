@@ -2,7 +2,8 @@ import { Elysia } from "elysia";
 import { apiPlugin } from "./api";
 import { astroStaticPlugin, contentStaticPlugin } from "./static";
 
-const PORT = Number.parseInt(process.env.PORT ?? "4321", 10);
+const DEFAULT_PORT = process.env.NODE_ENV === "production" ? "80" : "4321";
+const PORT = Number.parseInt(process.env.PORT ?? DEFAULT_PORT, 10);
 const SYSTEM_DIR = "./dist/system";
 
 const app = new Elysia()
