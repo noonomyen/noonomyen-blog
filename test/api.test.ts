@@ -1,31 +1,23 @@
-import { describe, expect, it } from "bun:test";
+import { expect, test } from "bun:test";
 import { app } from "../src/server/app";
 
-describe("Backend API", () => {
-	it("should return 200 for health check", async () => {
-		const response = await app.handle(
-			new Request("http://localhost/api/health"),
-		);
-		expect(response.status).toBe(200);
-		const body = await response.json();
-		expect(body).toEqual({ status: "ok" });
-	});
+test("health check returns 200", async () => {
+	const response = await app.handle(new Request("http://localhost/api/health"));
+	expect(response.status).toBe(200);
+	expect(await response.json()).toEqual({ status: "ok" });
+});
 
-	it("should have correct API security and cache headers", async () => {
-		const response = await app.handle(
-			new Request("http://localhost/api/health"),
-		);
+test("correct security headers", async () => {
+	const response = await app.handle(new Request("http://localhost/api/health"));
+	expect(response.headers.get("Cache-Control")).toBe("no-store");
+	expect(response.headers.get("X-Robots-Tag")).toBe("noindex, nofollow");
+	await response.text();
+});
 
-		expect(response.headers.get("Cache-Control")).toBe("no-store");
-		expect(response.headers.get("X-Robots-Tag")).toBe("noindex, nofollow");
-		await response.text(); // Consume body
-	});
-
-	it("should return 404 for unknown API endpoints", async () => {
-		const response = await app.handle(
-			new Request("http://localhost/api/unknown-endpoint"),
-		);
-		expect(response.status).toBe(404);
-		await response.text(); // Consume body
-	});
+test("unknown endpoint returns 404", async () => {
+	const response = await app.handle(
+		new Request("http://localhost/api/unknown-endpoint"),
+	);
+	expect(response.status).toBe(404);
+	await response.text();
 });
