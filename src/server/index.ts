@@ -30,4 +30,16 @@ const app = new Elysia()
 		console.log(`Server running at http://localhost:${PORT}`);
 	});
 
+// Handle signals for prompt and graceful shutdown
+const handleShutdown = () => {
+	console.log("\nShutdown signal received. Stopping server...");
+	app.stop().then(() => {
+		console.log("Server stopped successfully.");
+		process.exit(0);
+	});
+};
+
+process.on("SIGINT", handleShutdown);
+process.on("SIGTERM", handleShutdown);
+
 export type App = typeof app;
