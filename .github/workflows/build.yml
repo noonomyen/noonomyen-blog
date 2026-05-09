@@ -34,7 +34,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    name: Astro Build
+    name: Astro Build and Test
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -49,3 +49,15 @@ jobs:
 
       - name: Run Astro Build
         run: bun run build
+
+      - name: Run Backward Compatibility Tests
+        run: bun test test/compatibility.test.ts
+
+      - name: Run Core Web Route Tests
+        run: bun test test/web.test.ts
+
+      - name: Run Content Integrity Tests
+        run: bun test test/content.test.ts
+
+      - name: Run Backend API Tests
+        run: bun test test/api.test.ts

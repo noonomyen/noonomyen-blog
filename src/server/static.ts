@@ -1,22 +1,30 @@
 import { staticPlugin } from "@elysiajs/static";
 import { Elysia } from "elysia";
+import path from "node:path";
 
-const ASTRO_DIR = "./dist/astro-static";
-const CONTENT_DIR = "./dist/content-static";
+// Specific directory for hashed assets to avoid prefix collision at root
+const ASTRO_ASSETS_DIR = path.resolve("./dist/astro-static/_astro");
+const CONTENT_DIR = path.resolve("./dist/content-static");
 
-// 1. Astro Hashed Static Assets (immutable 7 days cache)
-export const astroStaticPlugin = new Elysia().use(
-	staticPlugin({
-		assets: ASTRO_DIR,
-		prefix: "/",
-		alwaysStatic: true,
-		maxAge: 604800,
-		directive: "immutable",
-	}),
-);
+const isTest = process.env.NODE_ENV === "test";
 
-// 2. Content HTML Static Pages (revalidate max-age=0 cache)
-export const contentStaticPlugin = new Elysia()
+/**
+ * Unified static asset plugin.
+ * Separates hashed assets from root content to prevent route collision.
+ */
+export const staticAssetsPlugin = new Elysia()
+	// 1. Astro Hashed Static Assets (e.g., /_astro/chunk.js)
+	// Mounted on /_astro to keep / clean for content
+	.use(
+		staticPlugin({
+			assets: ASTRO_ASSETS_DIR,
+			prefix: "/_astro",
+			alwaysStatic: !isTest,
+			maxAge: 604800,
+			directive: "immutable",
+		}),
+	)
+	// 2. Content HTML Static Pages & Root Assets (robots.txt, favicon.ico, etc.)
 	.onBeforeHandle(({ set, path, redirect }) => {
 		if (path.endsWith("/index.html")) {
 			return redirect(path.slice(0, -11) || "/", 301);
@@ -27,8 +35,7 @@ export const contentStaticPlugin = new Elysia()
 		staticPlugin({
 			assets: CONTENT_DIR,
 			prefix: "/",
-			extension: true,
 			indexHTML: true,
-			alwaysStatic: true,
+			alwaysStatic: !isTest,
 		}),
 	);

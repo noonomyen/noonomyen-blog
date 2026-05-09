@@ -6,4 +6,4 @@
 
 /about https://noonomyen.com/about 302
 
--- /posts/ctf/secplayground-bloody-xmas-ctf-2025 /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeup 301
+/posts/ctf/secplayground-bloody-xmas-ctf-2025 /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeup 301
