@@ -18,6 +18,7 @@ describe("Backend API", () => {
 
 		expect(response.headers.get("Cache-Control")).toBe("no-store");
 		expect(response.headers.get("X-Robots-Tag")).toBe("noindex, nofollow");
+		await response.text(); // Consume body
 	});
 
 	it("should return 404 for unknown API endpoints", async () => {
@@ -25,5 +26,6 @@ describe("Backend API", () => {
 			new Request("http://localhost/api/unknown-endpoint"),
 		);
 		expect(response.status).toBe(404);
+		await response.text(); // Consume body
 	});
 });

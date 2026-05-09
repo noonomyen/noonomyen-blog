@@ -33,6 +33,7 @@ describe("Dynamic Content Routing", () => {
 
 			// We expect 200 for content. If it redirects, we still consider it valid for now
 			expect([200, 301, 302]).toContain(response.status);
+			await response.blob(); // Consume body
 		});
 	}
 });

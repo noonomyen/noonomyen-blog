@@ -16,6 +16,7 @@ describe("Backward Compatibility Routing", () => {
 				new Request(`http://localhost${path}`),
 			);
 			expect([200, 301, 302]).toContain(response.status);
+			await response.blob(); // Consume body
 		});
 	}
 });

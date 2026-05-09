@@ -21,7 +21,7 @@
     "new-post": "bun run scripts/new-post.js",
     "format": "biome format --write ./src",
     "lint": "biome check --write ./src",
-    "test": "bun test test/*.test.ts"
+    "test": "bun test --concurrency 1 test/*.test.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

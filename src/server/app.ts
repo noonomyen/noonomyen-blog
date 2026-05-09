@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { Elysia } from "elysia";
 import {
 	parseRedirectsToAstroMap,
@@ -29,13 +30,12 @@ export const app = new Elysia()
 		if (code === "NOT_FOUND") {
 			set.status = 404;
 			set.headers["Cache-Control"] = "public, max-age=0, must-revalidate";
-			// biome-ignore lint/suspicious/noExplicitAny: Bun is not available in Astro global types
-			const f = (globalThis as any).Bun.file(`${SYSTEM_DIR}/404.html`);
-			return f
-				.exists()
-				.then((exists: boolean) =>
-					exists ? f : new Response("404 Not Found", { status: 404 }),
-				);
+			const path404 = `${SYSTEM_DIR}/404.html`;
+			if (fs.existsSync(path404)) {
+				// biome-ignore lint/suspicious/noExplicitAny: Bun is not available in Astro global types
+				return (globalThis as any).Bun.file(path404);
+			}
+			return new Response("404 Not Found", { status: 404 });
 		}
 	});
 

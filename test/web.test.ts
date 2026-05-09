@@ -18,6 +18,7 @@ describe("Core Web Routes", () => {
 				new Request(`http://localhost${route.path}`),
 			);
 			expect(response.status).toBe(route.expected);
+			await response.blob(); // Consume body (blob handles both text and images/binary)
 		});
 	}
 
@@ -26,5 +27,6 @@ describe("Core Web Routes", () => {
 			new Request("http://localhost/this-page-definitely-does-not-exist-12345"),
 		);
 		expect(response.status).toBe(404);
+		await response.text(); // Consume body
 	});
 });
