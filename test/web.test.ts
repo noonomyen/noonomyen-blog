@@ -1,19 +1,7 @@
-import { describe, expect, it, beforeAll, afterAll } from "bun:test";
+import { describe, expect, it } from "bun:test";
 import { app } from "../src/server/app";
 
 describe("Core Web Routes", () => {
-	let baseUrl: string;
-
-	beforeAll(() => {
-		// Listen on a random available port
-		app.listen(0);
-		baseUrl = `http://localhost:${app.server?.port}`;
-	});
-
-	afterAll(async () => {
-		await app.stop();
-	});
-
 	const coreRoutes = [
 		{ path: "/", expected: 200 },
 		{ path: "/archive", expected: 200 },
@@ -26,15 +14,17 @@ describe("Core Web Routes", () => {
 
 	for (const route of coreRoutes) {
 		it(`should return ${route.expected} for ${route.path}`, async () => {
-			const response = await fetch(`${baseUrl}${route.path}`, {
-				redirect: "manual",
-			});
+			const response = await app.handle(
+				new Request(`http://localhost${route.path}`),
+			);
 			expect(response.status).toBe(route.expected);
 		});
 	}
 
 	it("should return 404 for random non-existent routes", async () => {
-		const response = await fetch(`${baseUrl}/this-page-definitely-does-not-exist-12345`);
+		const response = await app.handle(
+			new Request("http://localhost/this-page-definitely-does-not-exist-12345"),
+		);
 		expect(response.status).toBe(404);
 	});
 });

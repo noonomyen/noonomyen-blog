@@ -1,4 +1,4 @@
-import { describe, expect, it, beforeAll, afterAll } from "bun:test";
+import { describe, expect, it } from "bun:test";
 import { app } from "../src/server/app";
 import { glob } from "glob";
 
@@ -21,27 +21,16 @@ const mdFiles = glob.sync("src/content/posts/**/*.{md,mdx}");
 const contentPaths = mdFiles.map(fileToPath);
 
 describe("Dynamic Content Routing", () => {
-	let baseUrl: string;
-
-	beforeAll(() => {
-		app.listen(0);
-		baseUrl = `http://localhost:${app.server?.port}`;
-	});
-
-	afterAll(async () => {
-		await app.stop();
-	});
-
 	it("should have found some markdown files", () => {
 		expect(contentPaths.length).toBeGreaterThan(0);
 	});
 
 	for (const path of contentPaths) {
 		it(`should resolve content post: ${path}`, async () => {
-			const response = await fetch(`${baseUrl}${path}`, {
-				redirect: "manual",
-			});
-			
+			const response = await app.handle(
+				new Request(`http://localhost${path}`),
+			);
+
 			// We expect 200 for content. If it redirects, we still consider it valid for now
 			expect([200, 301, 302]).toContain(response.status);
 		});
