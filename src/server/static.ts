@@ -1,6 +1,6 @@
+import path from "node:path";
 import { staticPlugin } from "@elysiajs/static";
 import { Elysia } from "elysia";
-import path from "node:path";
 
 // Specific directory for hashed assets to avoid prefix collision at root
 const ASTRO_ASSETS_DIR = path.resolve("./dist/astro-static/_astro");
@@ -10,16 +10,17 @@ const isTest = process.env.NODE_ENV === "test";
 
 /**
  * Unified static asset plugin.
- * Separates hashed assets from root content to prevent route collision.
+ * FIX: alwaysStatic: true causes server to hang and consume high CPU on startup.
+ * The cause is currently unknown and is not related to file count.
+ * alwaysStatic is set to false as a temporary fix.
  */
 export const staticAssetsPlugin = new Elysia()
 	// 1. Astro Hashed Static Assets (e.g., /_astro/chunk.js)
-	// Mounted on /_astro to keep / clean for content
 	.use(
 		staticPlugin({
 			assets: ASTRO_ASSETS_DIR,
 			prefix: "/_astro",
-			alwaysStatic: !isTest,
+			alwaysStatic: false,
 			maxAge: 604800,
 			directive: "immutable",
 		}),
@@ -36,6 +37,6 @@ export const staticAssetsPlugin = new Elysia()
 			assets: CONTENT_DIR,
 			prefix: "/",
 			indexHTML: true,
-			alwaysStatic: !isTest,
+			alwaysStatic: false,
 		}),
 	);

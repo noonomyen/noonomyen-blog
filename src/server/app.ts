@@ -1,10 +1,19 @@
 import { Elysia } from "elysia";
 import { apiPlugin } from "./api";
 import { staticAssetsPlugin } from "./static";
+import { parseRedirectsToAstroMap, REDIRECTS_FILE } from "../utils/parse-redirects";
 
 const SYSTEM_DIR = "./dist/system";
+const redirects = parseRedirectsToAstroMap(REDIRECTS_FILE);
 
 export const app = new Elysia()
+	// Redirects handling
+	.onBeforeHandle(({ path, redirect }) => {
+		const rule = redirects[path];
+		if (rule) {
+			return redirect(rule.destination, rule.status as any);
+		}
+	})
 	// API routes
 	.use(apiPlugin)
 	// Static assets and content pages
