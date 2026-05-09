@@ -2,6 +2,8 @@
 
 A personal blog built with Astro and based on [Fuwari](https://github.com/saicaca/fuwari).
 
+> This repository utilizes AI for development, and as a result, errors may occur frequently.
+
 ## License
 
 This project is based on Fuwari by saicaca and includes code licensed under the MIT License.
