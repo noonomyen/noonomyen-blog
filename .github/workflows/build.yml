@@ -48,7 +48,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Run Astro Build
-        run: bun run build
+        run: bun run build:dev
 
       - name: Run Backward Compatibility Tests
         run: bun test test/compatibility.test.ts

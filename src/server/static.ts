@@ -6,7 +6,7 @@ import { Elysia } from "elysia";
 const ASTRO_ASSETS_DIR = path.resolve("./dist/astro-static/_astro");
 const CONTENT_DIR = path.resolve("./dist/content-static");
 
-const isTest = process.env.NODE_ENV === "test";
+// const isTest = process.env.NODE_ENV === "test";
 
 /**
  * Unified static asset plugin.
