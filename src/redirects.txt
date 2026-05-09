@@ -5,3 +5,5 @@
 -- Example: /old-path /new-path 301
 
 /about https://noonomyen.com/about 302
+
+-- /posts/ctf/secplayground-bloody-xmas-ctf-2025 /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeup 301

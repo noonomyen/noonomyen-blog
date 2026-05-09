@@ -24,7 +24,6 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-console.log("DEBUG ID:", entry.id, entry.filePath);
 const { Content, headings, remarkPluginFrontmatter } = await render(entry);
 
 const jsonLd = {
