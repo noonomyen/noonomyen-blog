@@ -28,7 +28,11 @@ export const staticAssetsPlugin = new Elysia()
 	// 2. Content HTML Static Pages & Root Assets (robots.txt, favicon.ico, etc.)
 	.onBeforeHandle(({ set, path, redirect }) => {
 		if (path.endsWith("/index.html")) {
-			return redirect(path.slice(0, -11) || "/", 301);
+			let p = path.slice(0, -11);
+			if (p.length > 1 && p.endsWith("/")) {
+				p = p.slice(0, -1);
+			}
+			return redirect(p || "/", 301);
 		}
 		set.headers["Cache-Control"] = "public, max-age=0, must-revalidate";
 	})
