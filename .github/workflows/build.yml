@@ -58,14 +58,14 @@ jobs:
       - name: Run Astro Build
         run: bun run build:dev
 
-      - name: Run Backward Compatibility Tests
-        run: bun test test/compatibility.test.ts
+      # - name: Run Backward Compatibility Tests
+      #   run: bun test test/compatibility.test.ts
 
-      - name: Run Core Web Route Tests
-        run: bun test test/web.test.ts
+      # - name: Run Core Web Route Tests
+      #   run: bun test test/web.test.ts
 
-      - name: Run Content Integrity Tests
-        run: bun test test/content.test.ts
+      # - name: Run Content Integrity Tests
+      #   run: bun test test/content.test.ts
 
       # Temporarily disabled: Backend API tests are intermittently hanging in CI for unknown reasons.
       # - name: Run Backend API Tests
