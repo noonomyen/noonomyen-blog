@@ -22,15 +22,11 @@ COPY scripts ./scripts
 RUN bun run build:prod
 
 # Stage 2: Runtime
-FROM alpine:3.22.4 AS runner
+FROM oven/bun:1.3.13-alpine AS runner
 
 WORKDIR /app
 
-# Install runtime dependencies
-COPY --from=builder /usr/lib/libstdc++.so.6 /usr/lib/libstdc++.so.6
-COPY --from=builder /usr/lib/libgcc_s.so.1 /usr/lib/libgcc_s.so.1
-
-# Copy the compiled server binary and rearranged static assets
+# Copy the built server file and rearranged static assets
 COPY --from=builder /app/dist ./dist
 
 # Set environment variables
@@ -41,4 +37,4 @@ ENV PORT=80
 EXPOSE 80
 
 # Run the standalone binary
-CMD ["/app/dist/server"]
+CMD ["bun", "/app/dist/server.js"]
