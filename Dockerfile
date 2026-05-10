@@ -28,10 +28,15 @@ WORKDIR /app
 
 # Copy the built server file and rearranged static assets
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/scripts/healthcheck.sh ./scripts/healthcheck.sh
 
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=80
+
+# Health check
+HEALTHCHECK --interval=60s --timeout=5s --start-period=5s --retries=5 \
+  CMD ["/app/scripts/healthcheck.sh"]
 
 # Expose the port
 EXPOSE 80
