@@ -21,11 +21,12 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          IMAGE_NAME="${{ secrets.DEPLOY_OCIR_SERVER }}/${{ secrets.DEPLOY_OCIR_IMAGE }}:${{ github.sha }}"
-          docker build -t "$IMAGE_NAME" .
-          docker push "$IMAGE_NAME"
+          IMAGE_BASE="${{ secrets.DEPLOY_OCIR_SERVER }}/${{ secrets.DEPLOY_OCIR_IMAGE }}"
+          docker build -t "$IMAGE_BASE:${{ github.sha }}" -t "$IMAGE_BASE:latest" .
+          docker push "$IMAGE_BASE:${{ github.sha }}"
+          docker push "$IMAGE_BASE:latest"
 
       - name: Trigger Deployment Webhook
         run: |
-          curl -X POST "${{ secrets.DEPLOY_SERVER }}${{ github.sha }}" \
-               -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}"
+          curl -X POST "${{ secrets.DEPLOY_SERVER }}" \
+               -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}"
