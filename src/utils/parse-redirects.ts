@@ -25,7 +25,7 @@ export function parseRedirects(filePath: string): RedirectEntry[] {
 	const redirects: RedirectEntry[] = [];
 
 	if (!fs.existsSync(filePath)) {
-		return redirects;
+		throw new Error(`Redirects file not found at: ${filePath}`);
 	}
 
 	const content = fs.readFileSync(filePath, "utf-8");

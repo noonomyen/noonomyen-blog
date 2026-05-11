@@ -29,6 +29,7 @@ WORKDIR /app
 # Copy the built server file and rearranged static assets
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/scripts/healthcheck.sh ./scripts/healthcheck.sh
+COPY --from=builder /app/src/redirects.txt ./src/redirects.txt
 
 # Set environment variables
 ENV NODE_ENV=production
