@@ -23,7 +23,10 @@ jobs:
       - name: Build and Push Docker image
         run: |
           IMAGE_BASE="${{ secrets.DEPLOY_OCIR_SERVER }}/${{ secrets.DEPLOY_OCIR_IMAGE }}"
-          docker build -t "$IMAGE_BASE:${{ github.sha }}" -t "$IMAGE_BASE:latest" .
+          docker build \
+            --build-arg COMMIT_HASH="${{ github.sha }}" \
+            -t "$IMAGE_BASE:${{ github.sha }}" \
+            -t "$IMAGE_BASE:latest" .
           docker push "$IMAGE_BASE:${{ github.sha }}"
           docker push "$IMAGE_BASE:latest"
 

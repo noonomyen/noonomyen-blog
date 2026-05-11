@@ -35,6 +35,9 @@ COPY --from=builder /app/src/redirects.txt ./src/redirects.txt
 ENV NODE_ENV=production
 ENV PORT=80
 
+ARG COMMIT_HASH
+ENV APP_COMMIT_HASH=${COMMIT_HASH}
+
 # Health check
 HEALTHCHECK --interval=60s --timeout=5s --start-period=5s --retries=5 \
   CMD ["/app/scripts/healthcheck.sh"]
