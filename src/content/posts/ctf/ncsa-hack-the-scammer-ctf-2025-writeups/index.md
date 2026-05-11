@@ -3,7 +3,7 @@ title: NCSA Hack the Scammer CTF 2025 Write-ups
 published: 2025-12-14
 description: "Writeup ทีม Don't Know Everything ในการแข่งขัน NCSA Hack the Scammer CTF 2025"
 image: "images/1.png"
-ogimage: "images/0.png"
+og-image: "images/0.png"
 tags: ["CTF Writeup", "Don't Know Everything Team", "NCSA Hack the Scammer CTF", "2025"]
 category: "CTF Writeup"
 draft: false

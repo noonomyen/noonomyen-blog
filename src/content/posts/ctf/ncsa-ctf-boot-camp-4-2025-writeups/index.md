@@ -3,7 +3,7 @@ title: NCSA CTF Boot Camp 2025 (4th Generation) Mini CTF Write-ups
 published: 2025-07-21
 description: "Write-ups การแข่งขัน Mini CTF ในกิจกรรม CTF Boot Camp 2025 รุ่นที่ 4 จังหวัดอุบลราชธานี จัดโดย NCSA ระหว่างวันที่ 19-20 July 2025"
 image: "images/0.png"
-ogimage: "images/1.png"
+og-image: "images/1.png"
 tags: ["CTF Writeup", "NCSA CTF Boot Camp", "2025", "CTF Writeup", "Randomly Assigned Team"]
 category: "CTF Writeup"
 draft: false
