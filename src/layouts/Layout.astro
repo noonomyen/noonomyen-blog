@@ -73,9 +73,10 @@ if (!finalOgImage && siteConfig.banner.enable) {
 	finalOgImage = siteConfig.banner.src;
 }
 
-const ogImageUrl = await resolveOgImage(
-	typeof finalOgImage === "string" ? finalOgImage : undefined,
-);
+const ogImageUrl = await resolveOgImage(finalOgImage);
+const finalOgImageUrl = ogImageUrl
+	? new URL(ogImageUrl, Astro.url).href
+	: undefined;
 // If resolveOgImage returns undefined but finalOgImage was ImageMetadata, handle it if needed
 // (Current resolveOgImage handles string, but we can extend or handle Metadata here)
 
@@ -109,13 +110,13 @@ const bannerOffset =
         ) : (
         <meta property="og:type" content="website" />
         )}
-		{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+		{finalOgImageUrl && <meta property="og:image" content={finalOgImageUrl} />}
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content={Astro.url}>
 		<meta name="twitter:title" content={pageTitle}>
 		<meta name="twitter:description" content={description || pageTitle}>
-		{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+		{finalOgImageUrl && <meta name="twitter:image" content={finalOgImageUrl} />}
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />

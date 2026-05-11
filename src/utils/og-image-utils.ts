@@ -16,9 +16,18 @@ function isRemote(src: string): boolean {
 }
 
 export async function resolveOgImage(
-	src?: string,
+	src?: string | ImageMetadata,
 ): Promise<string | undefined> {
-	if (!src || src.trim() === "") {
+	if (!src) {
+		return undefined;
+	}
+
+	if (typeof src !== "string") {
+		const optimizedImage = await getImage({ src: src, format: "webp" });
+		return optimizedImage.src;
+	}
+
+	if (src.trim() === "") {
 		return undefined;
 	}
 
