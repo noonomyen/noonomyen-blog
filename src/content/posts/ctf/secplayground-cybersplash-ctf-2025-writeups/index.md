@@ -1,5 +1,5 @@
 ---
-title: SECPlayground Cybersplash CTF 2025 Writeup
+title: SECPlayground Cybersplash CTF 2025 Write-ups
 published: 2025-04-21
 description: "การแข่งขัน CTF หลังสงกรานต์ จัดโดย SECPlayground และ Sponsored โดย I-SECURE, Secure-D ในวันที่ 18/04/2025"
 image: "images/0.jpg"

@@ -1,5 +1,5 @@
 ---
-title: DropCTF ARCHA CTF 2026 Writeup
+title: DropCTF ARCHA CTF 2026 Write-ups
 published: 2026-02-08
 description: "Writeup of Don't Know Everything Team in the DropCTF ARCHA CTF"
 image: "images/0.png"

@@ -1,5 +1,5 @@
 ---
-title: SWU Capture the Flag Competition 2025 Round 1 Writeup
+title: SWU Capture the Flag Competition 2025 Round 1 Write-ups
 published: 2025-07-01
 description: "Writeup การแข่งขัน CTF (online) รอบแรก จัดโดย คณะวิศวกรรมศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ, ACIS Professional Center และ SECPlayground ในวันที่ 1/7/2025"
 image: "images/0.jpg"

@@ -1,5 +1,5 @@
 ---
-title: Thailand Cyber Top Talent 2023 Senior Final Writeup
+title: Thailand Cyber Top Talent 2023 Senior Final Write-ups
 published: 2023-10-02
 description: "Writeup of Don't Know Everything Team"
 # image: ""

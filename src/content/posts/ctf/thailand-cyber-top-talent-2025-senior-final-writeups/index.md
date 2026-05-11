@@ -1,5 +1,5 @@
 ---
-title: Thailand Cyber Top Talent 2025 Senior Final Writeup
+title: Thailand Cyber Top Talent 2025 Senior Final Write-ups
 published: 2025-09-13
 description: "Write-ups การแข่งขัน CTF รายการ Thailand Cyber Top Talent 2025 Senior Final Round วันที่ 13 Sep 2025"
 image: "images/1.png"

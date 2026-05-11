@@ -1,5 +1,5 @@
 ---
-title: PSRU Cyber Hackathon 2024 Senior Writeup
+title: PSRU Cyber Hackathon 2024 Senior Write-ups
 published: 2024-12-04
 description: "Writeup of the Don't Know Everything Team, only challenge solved by noonomyen"
 # image: ""

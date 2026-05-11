@@ -1,5 +1,5 @@
 ---
-title: NCSA CTF Boot Camp 2024 2 Writeup
+title: NCSA CTF Boot Camp 2024 2 Write-ups
 published: 2024-09-19
 description: "Writeup of the team and solutions posted post-event"
 # image: ""

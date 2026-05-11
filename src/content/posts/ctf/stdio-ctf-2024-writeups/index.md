@@ -1,5 +1,5 @@
 ---
-title: STDiO CTF 2024 Qualifiler Writeup
+title: STDiO CTF 2024 Qualifiler Write-ups
 published: 2024-09-26
 description: "Writeup of noonomyen"
 image: "images/0-0-0.jpg"

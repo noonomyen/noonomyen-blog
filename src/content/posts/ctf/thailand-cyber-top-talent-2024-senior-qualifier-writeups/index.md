@@ -1,5 +1,5 @@
 ---
-title: Thailand Cyber Top Talent 2024 Senior Qualifier Writeup
+title: Thailand Cyber Top Talent 2024 Senior Qualifier Write-ups
 published: 2024-10-01
 description: "Writeup of Don't Know Everything Team"
 image: ""

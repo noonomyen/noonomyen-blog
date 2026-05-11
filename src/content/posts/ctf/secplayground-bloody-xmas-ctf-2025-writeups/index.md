@@ -1,5 +1,5 @@
 ---
-title: SECPlayground Bloody Xmas CTF 2025 Writeup
+title: SECPlayground Bloody Xmas CTF 2025 Write-ups
 published: 2026-01-07
 description: "Writeup of Don't Know Everything Team in the SECPlayground Bloody Xmas CTF"
 image: "images/0.jpg"

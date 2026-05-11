@@ -1,5 +1,5 @@
 ---
-title: SECPlayground Hackloween CTF 2024 Writeup
+title: SECPlayground Hackloween CTF 2024 Write-ups
 published: 2024-11-02
 description: "Writeup ทีม Don't Know Everything ในการแข่งขัน CTF ในวัน Halloween จัดโดย SECPlayground"
 image: "images/0.jpg"

@@ -1,5 +1,5 @@
 ---
-title: SECPlayground Bloody Xmas CTF 2024 Writeup
+title: SECPlayground Bloody Xmas CTF 2024 Write-ups
 published: 2024-12-31
 description: "การแข่งขัน CTF ในวัน Christmas จัดโดย SECPlayground และ Sponsored โดย NCSA Thailand, I-SECURE, Secure-D ในวันที่ 25/12/2024–28/12/2024"
 image: "images/0.jpg"
