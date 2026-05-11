@@ -9,19 +9,17 @@
 /posts/ctf/secplayground-bloody-xmas-ctf-2025 /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeups 301
 
 /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeup /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeups 301
-/dropctf-archa-ctf-2026-writeup /dropctf-archa-ctf-2026-writeups 301
-/ncsa-ctf-boot-camp-2-2024-writeup /ncsa-ctf-boot-camp-2-2024-writeups 301
-/psru-cyber-hackathon-2-2024-senior-writeup /psru-cyber-hackathon-2-2024-senior-writeups 301
-/secplayground-bloody-xmas-ctf-2024-writeup /secplayground-bloody-xmas-ctf-2024-writeups 301
-/secplayground-bloody-xmas-ctf-2025-writeup /secplayground-bloody-xmas-ctf-2025-writeups 301
-/secplayground-cybersplash-ctf-2025-writeup /secplayground-cybersplash-ctf-2025-writeups 301
-/secplayground-hackloween-ctf-2024-writeup /secplayground-hackloween-ctf-2024-writeups 301
-/secplayground-hackloween-ctf-2025-writeup /secplayground-hackloween-ctf-2025-writeups 301
-/stdio-ctf-2024-writeup /stdio-ctf-2024-writeups 301
-/swu-capture-the-flag-competition-2025-round-1-writeup /swu-capture-the-flag-competition-2025-round-1-writeups 301
-/thailand-cyber-top-talent-2023-senior-final-writeup /thailand-cyber-top-talent-2023-senior-final-writeups 301
-/thailand-cyber-top-talent-2023-senior-qualifier-writeup /thailand-cyber-top-talent-2023-senior-qualifier-writeups 301
-/thailand-cyber-top-talent-2024-senior-qualifier-writeup /thailand-cyber-top-talent-2024-senior-qualifier-writeups 301
-/thailand-cyber-top-talent-2025-senior-final-writeup /thailand-cyber-top-talent-2025-senior-final-writeups 301
-
-
+/posts/ctf/dropctf-archa-ctf-2026-writeup /posts/ctf/dropctf-archa-ctf-2026-writeups 301
+/posts/ctf/ncsa-ctf-boot-camp-2-2024-writeup /posts/ctf/ncsa-ctf-boot-camp-2-2024-writeups 301
+/posts/ctf/psru-cyber-hackathon-2-2024-senior-writeup /posts/ctf/psru-cyber-hackathon-2-2024-senior-writeups 301
+/posts/ctf/secplayground-bloody-xmas-ctf-2024-writeup /posts/ctf/secplayground-bloody-xmas-ctf-2024-writeups 301
+/posts/ctf/secplayground-bloody-xmas-ctf-2025-writeup /posts/ctf/secplayground-bloody-xmas-ctf-2025-writeups 301
+/posts/ctf/secplayground-cybersplash-ctf-2025-writeup /posts/ctf/secplayground-cybersplash-ctf-2025-writeups 301
+/posts/ctf/secplayground-hackloween-ctf-2024-writeup /posts/ctf/secplayground-hackloween-ctf-2024-writeups 301
+/posts/ctf/secplayground-hackloween-ctf-2025-writeup /posts/ctf/secplayground-hackloween-ctf-2025-writeups 301
+/posts/ctf/stdio-ctf-2024-writeup /posts/ctf/stdio-ctf-2024-writeups 301
+/posts/ctf/swu-capture-the-flag-competition-2025-round-1-writeup /posts/ctf/swu-capture-the-flag-competition-2025-round-1-writeups 301
+/posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeup /posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeups 301
+/posts/ctf/thailand-cyber-top-talent-2023-senior-qualifier-writeup /posts/ctf/thailand-cyber-top-talent-2023-senior-qualifier-writeups 301
+/posts/ctf/thailand-cyber-top-talent-2024-senior-qualifier-writeup /posts/ctf/thailand-cyber-top-talent-2024-senior-qualifier-writeups 301
+/posts/ctf/thailand-cyber-top-talent-2025-senior-final-writeup /posts/ctf/thailand-cyber-top-talent-2025-senior-final-writeups 301
