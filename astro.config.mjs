@@ -34,7 +34,7 @@ export default defineConfig({
 			: "https://blog.noonomyen.com",
 	base: "/",
 	trailingSlash: "never",
-	redirects: parseRedirectsToAstroMap(REDIRECTS_FILE),
+	redirects: process.env.NODE_ENV === "development" ? parseRedirectsToAstroMap(REDIRECTS_FILE) : {},
 	integrations: [
 		tailwind({
 			nesting: true,
