@@ -46,7 +46,7 @@ checksec
 
 และมี string `/bin/sh` มี symbol อยู่ชื่อ `shell_path` อยู่ใน rodata
 
-เนื่องจากมี NX และ Partial RELRO เปิดอยู่ ท่าที่เหมาะๆจึงจะเป็น ret2libc
+เนื่องจากมี NX และ Partial RELRO เปิดอยู่ ท่าที่เหมาะๆจึงจะเป็น ret2system
 
 ![8.png](./images/8.png)
 
