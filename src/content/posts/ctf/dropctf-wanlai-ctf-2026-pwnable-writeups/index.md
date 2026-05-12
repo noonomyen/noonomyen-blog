@@ -44,7 +44,7 @@ checksec
 
 ![7.png](./images/7.png)
 
-และมี string `/bin/sh` มี symbol อยู่ชื่ีอ `shell_path` อยู่ใน rodata
+และมี string `/bin/sh` มี symbol อยู่ชื่อ `shell_path` อยู่ใน rodata
 
 เนื่องจากมี NX และ Partial RELRO เปิดอยู่ ท่าที่เหมาะๆจึงจะเป็น ret2libc
 
@@ -112,7 +112,7 @@ p.interactive()
 
 โดยเราจะใช้ `printf` ในการ leak libc base address โดยการ input ผ่าน `read(0,local_38,0x1f)` มันจะถูกเขียนลง `local_38[31]` ซึ่งจะถูก output อีกทีที่ `printf(local_38)` ทำให้เราสามารถกำหนด format string ได้
 
-แล้ว leak มาจากไหนละ?
+แล้ว leak มาจากไหนล่ะ?
 
 ![13.png](./images/13.png)
 
@@ -145,7 +145,7 @@ offset 120
 
 ![17.png](./images/17.png)
 
-ซึ่งที่่กล่าวมามีใน libc และเราก็รู้ libc base แล้วด้วย ดั้งนั้นถึงเวลาประกอบ exploit script
+ซึ่งที่่กล่าวมามีใน libc และเราก็รู้ libc base แล้วด้วย ดังนั้นถึงเวลาประกอบ exploit script
 
 ```py
 from pwn import *
@@ -238,11 +238,11 @@ print(disasm(code))
 
 ปกติแหละ... แต่ๆ มี `mov rax rdi` อยู่ มันคืออะไร? ก็คือ เอา argument ตัวแรก (args ของ `launch` คือ addr ของ mmap ที่จองมา) ไปเก็บไว้ใน rax ยังไงละ และไม่ได้ถูก reset ด้วยเพราะถูกใช้ในการ jump
 
-เอาละเรามาสรุปสถานะการกัน ตัว program นี้จะให้เราใส่ input เป็น shellcode ที่ถูก assemble มาแล้ว โดยจะแบ่งออกเป็น 2 stage หรือครั้งแรก เราจะใส่อะไรลงไปรันก็ได้ยกเว้น byte `0x0f` `0xcd` เพราะเป็นส่วนประกอบสำหรับเรียกใช้ system call แต่ถ้าเราสังเกตดีๆ เราจะพบว่า หลังจากที่ shellcode ของเราใน stage 1 รันเสร็จแล้วมันละไหล `NOP` ไปหา stub ที่ถูกเตรียมโดย program ไว้ในตอนต้น โดย code ส่วนนั้นจะทำการ call `syscall` โดยไม่กำหนดอะไรเลยก่อน เสร็จแล้วเรียกใช้ `syscall` สำหรับอ่าน STDIN ขนาด 512 bytes ลง stack แล้ว jump รันครั้งที่สอง (stage 2) เข้า stack
+เอาละเรามาสรุปสถานการณ์กัน ตัว program นี้จะให้เราใส่ input เป็น shellcode ที่ถูก assemble มาแล้ว โดยจะแบ่งออกเป็น 2 stage หรือครั้งแรก เราจะใส่อะไรลงไปรันก็ได้ยกเว้น byte `0x0f` `0xcd` เพราะเป็นส่วนประกอบสำหรับเรียกใช้ system call แต่ถ้าเราสังเกตดีๆ เราจะพบว่า หลังจากที่ shellcode ของเราใน stage 1 รันเสร็จแล้วมันจะไหล `NOP` ไปหา stub ที่ถูกเตรียมโดย program ไว้ในตอนต้น โดย code ส่วนนั้นจะทำการ call `syscall` โดยไม่กำหนดอะไรเลยก่อน เสร็จแล้วเรียกใช้ `syscall` สำหรับอ่าน STDIN ขนาด 512 bytes ลง stack แล้ว jump รันครั้งที่สอง (stage 2) เข้า stack
 
 แต่เดี๋ยวก่อน binary ตัวนี้ NX enabled นะ
 
-นั้นจึงเป็น guide ให้เราได้ทันทีว่า stage 1 เราต้องทำอะไร ถ้าไม่ใช่การปิด NX ผ่าน memory protection (allow exection)
+นั้นจึงเป็น guide ให้เราได้ทันทีว่า stage 1 เราต้องทำอะไร ถ้าไม่ใช่การปิด NX ผ่าน memory protection (allow execution)
 
 แล้วเราจะปิดยังไง?
 

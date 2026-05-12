@@ -11,7 +11,7 @@ lang: "th"
 
 การแข่งขัน SECPlayground Cybersplash CTF 2026 ในวันที่ 11 เมษายน ที่ผ่านมา 34 challenges in 6 categories
 
-เอาละครั้งนี้ผมมาแปลกหน่อย ถ้าสังเกตคงเห็นผมเขียน writeup น้อยลง ส่วนใหญ่ก็มาจากคนในทีมผมที่ solve ได้เยอะชึ้นและพลังของ llm ในปัจจุบันด้วย เอาละสำหรับ writeup นี้ผมมาแค่หมวด pwnable เพราะหมวดอื่นคนในทีมผมเอาไปกินหมดละ ถึงข้อสุดท้ายในหมวดนี้ผมจะไม่ทันเพื่อนผมก็เถอะ
+เอาละครั้งนี้ผมมาแปลกหน่อย ถ้าสังเกตคงเห็นผมเขียน writeup น้อยลง ส่วนใหญ่ก็มาจากคนในทีมผมที่ solve ได้เยอะขึ้นและพลังของ llm ในปัจจุบันด้วย เอาละสำหรับ writeup นี้ผมมาแค่หมวด pwnable เพราะหมวดอื่นคนในทีมผมเอาไปกินหมดละ ถึงข้อสุดท้ายในหมวดนี้ผมจะไม่ทันเพื่อนผมก็เถอะ
 
 - [@noonomyen](https://github.com/noonomyen)
 - [@c0ffeeOverdose](https://github.com/c0ffeeOverdose)
@@ -31,7 +31,7 @@ lang: "th"
 
 ## ROPChain Relay
 
-*A network packet forwarder service is running on a remote server. It accepts a single "payload" packet and forwards it. However, the forwarding logic has aa critical buffer managemnt flaw. The binary has NX enabled, so you can't just inject shell code - you'll need to think in chains.*
+*A network packet forwarder service is running on a remote server. It accepts a single "payload" packet and forwards it. However, the forwarding logic has a critical buffer management flaw. The binary has NX enabled, so you can't just inject shell code - you'll need to think in chains.*
 
 ![1.png](./images/1.png)
 
@@ -201,7 +201,7 @@ Flag `pwn{rLOzptCARw}`
 
 ## Fortress Leak
 
-*A "Secure Message Vault" has been deployed with every protection the developers could find - PIE, stack canaries, NX, and Full RELRO. They're confident it's impenetrable. but every fortess has a weakness. Can you chain together multiuple vulnerabilities to break through all the defenses?*
+*A "Secure Message Vault" has been deployed with every protection the developers could find - PIE, stack canaries, NX, and Full RELRO. They're confident it's impenetrable. but every fortress has a weakness. Can you chain together multiple vulnerabilities to break through all the defenses?*
 
 ![12.png](./images/12.png)
 
@@ -285,7 +285,7 @@ ret2shell แหละ แน่นอนปลายทาง `system("/bin/sh"
 
 - leak PIE สำหรับใช้หา gadget address
 - leak canary สำหรับทำ stack overflow
-- leak libc สำหรับหา base address เพื่อคำนวน `system` address และ `/bin/sh` ต่อ
+- leak libc สำหรับหา base address เพื่อคำนวณ `system` address และ `/bin/sh` ต่อ
 
 เหงื่อตกแปป เริ่มจากหา leak
 
@@ -372,7 +372,7 @@ for i in range(1, 30):
 
 - canary index: 25
 - PIE return index: 27
-- arbitary read arg: 10
+- arbitrary read arg: 10
 - `main` return from `vault` offset: 0x15b3
 
 แวะกลับไปหา padding ของ buffer ก่อน โดยเราจะใช้ break เดียวกับตอนหา canary โดยเราเขียน `A` เข้าไปเป็น mark แล้วก็วัดไปหา canary
