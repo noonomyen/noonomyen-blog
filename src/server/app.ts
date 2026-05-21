@@ -12,8 +12,10 @@ const redirects = parseRedirectsToAstroMap(REDIRECTS_FILE);
 
 export const app = new Elysia()
 	// Redirects handling
-	.onBeforeHandle(({ path, redirect }) => {
-		const rule = redirects[path];
+  .onBeforeHandle(({ path, redirect }) => {
+    // Remove trailing slash from path before checking redirects
+    if (path.endsWith("/")) path = path.slice(0, -1);
+    const rule = redirects[path];
 		if (rule) {
 			return redirect(
 				rule.destination,

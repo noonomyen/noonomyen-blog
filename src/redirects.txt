@@ -19,7 +19,7 @@
 /posts/ctf/secplayground-hackloween-ctf-2025-writeup /posts/ctf/secplayground-hackloween-ctf-2025-writeups 301
 /posts/ctf/stdio-ctf-2024-writeup /posts/ctf/stdio-ctf-2024-writeups 301
 /posts/ctf/swu-capture-the-flag-competition-2025-round-1-writeup /posts/ctf/swu-capture-the-flag-competition-2025-round-1-writeups 301
-/posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeup /posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeups 301
+-- /posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeup /posts/ctf/thailand-cyber-top-talent-2023-senior-final-writeups 301
 /posts/ctf/thailand-cyber-top-talent-2023-senior-qualifier-writeup /posts/ctf/thailand-cyber-top-talent-2023-senior-qualifier-writeups 301
 /posts/ctf/thailand-cyber-top-talent-2024-senior-qualifier-writeup /posts/ctf/thailand-cyber-top-talent-2024-senior-qualifier-writeups 301
 /posts/ctf/thailand-cyber-top-talent-2025-senior-final-writeup /posts/ctf/thailand-cyber-top-talent-2025-senior-final-writeups 301

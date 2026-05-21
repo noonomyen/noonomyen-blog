@@ -1,6 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import { app } from "../src/server/app";
 import { glob } from "glob";
+import { readFileSync } from "node:fs"
 
 // Helper to convert md file path to site URL path
 function fileToPath(filePath: string): string {
@@ -9,7 +10,7 @@ function fileToPath(filePath: string): string {
         .replace("src/content/posts/", "/posts/")
         .replace(/index\.mdx?$/, "")
         .replace(/\.mdx?$/, "");
-    
+
     // Remove trailing slash if not root
     if (path.length > 1 && path.endsWith("/")) {
         path = path.slice(0, -1);
@@ -25,15 +26,13 @@ describe("Dynamic Content Routing", () => {
 		expect(contentPaths.length).toBeGreaterThan(0);
 	});
 
-	for (const path of contentPaths) {
-		it(`should resolve content post: ${path}`, async () => {
-			const response = await app.handle(
-				new Request(`http://localhost${path}`),
-			);
+  for (const path of contentPaths) {
+    // There should be a better way to check this (temporary fix).
+    const status = readFileSync(`src/content${path}/index.md`).toString().split("---", 2)[1].includes("draft: true") ? 404 : 200;
 
-			// We expect 200 for content. If it redirects, we still consider it valid for now
-			expect([200, 301, 302]).toContain(response.status);
-			await response.blob(); // Consume body
+		it(`should resolve content post: ${path}`, async () => {
+			const response = await app.handle(new Request(`http://localhost${path}`));
+			expect(response.status).toBe(status);
 		});
 	}
 });
