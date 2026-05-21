@@ -53,7 +53,7 @@ lang: "th"
 _Santa has left behind a mysterious message with a hidden key inside. This key serves as a clue to unlock the door and find the treasure chest containing the Christmas gifts that Santa has hidden. Let’s help find the key!_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Classical](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/classical)
+**Link:** [c0ffeeOverdose/Classical](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Santa’s Secret Gift
 
@@ -146,7 +146,7 @@ forensic{30/Nov/2024:14:08:18 +0000}
 _-_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Universal-Share](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/universal-share)
+**Link:** [c0ffeeOverdose/Universal-Share](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Secplaysomware#1
 
@@ -175,7 +175,7 @@ _this ransomware, what language was it developed?_ \
 _(this file real ransomware,run on VM only)_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Secplaysomware-2](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/secplaysomware-2)
+**Link:** [c0ffeeOverdose/Secplaysomware-2](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Secplaysomware#3
 
@@ -183,7 +183,7 @@ _what extension name does this ransomware use to encrypt files?_ \
 _(this file real ransomware,run on VM only)_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Secplaysomware-3](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/secplaysomware-3)
+**Link:** [c0ffeeOverdose/Secplaysomware-3](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Secplaysomware#4
 
@@ -191,7 +191,7 @@ _what file name was created after this ransomware run?_ \
 _(this file real ransomware,run on VM only)_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Secplaysomware-4](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/secplaysomware-4)
+**Link:** [c0ffeeOverdose/Secplaysomware-4](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Secplaysomware#5
 
@@ -441,7 +441,7 @@ forensic{pzk.zip}
 _Where is the file stored on the system?_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/Phantom-of-the-Network-3](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/phantom-of-the-network-3)
+**Link:** [c0ffeeOverdose/Phantom-of-the-Network-3](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # Phantom of the Network#6
 
@@ -548,7 +548,7 @@ forensic{santa_2024}
 _What is its file type_
 
 **Solved:** [**@c0ffeeOverdose**](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/The-Snowman-s-Secret-Message-1](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/the-snowmans-secret-message-1)
+**Link:** [c0ffeeOverdose/The-Snowman-s-Secret-Message-1](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # The Snowman’s Secret Message#2
 
@@ -571,7 +571,7 @@ forensic{dpaste.com}
 _In second stage, what is the filename that was downloaded by LOLBAS_
 
 Solved: [c0ffeeOverdose](https://medium.com/u/0d12216207c8) \
-**Link:** [c0ffeeOverdose/The-Snowman-s-Secret-Message-3](https://pssl.noonomyen.com/medium/c0ffeeOverdos/4294214003cd/the-snowmans-secret-message-3)
+**Link:** [c0ffeeOverdose/The-Snowman-s-Secret-Message-3](https://medium.com/@c0ffeeOverdose/secplayground-bloody-xmas-ctf-2024-writeups-4294214003cd)
 
 # The Snowman’s Secret Message#4
 

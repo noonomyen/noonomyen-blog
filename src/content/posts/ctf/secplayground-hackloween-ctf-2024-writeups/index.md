@@ -205,7 +205,7 @@ web{yPZoQ9BJ9}
 
 # Enter Captcha
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/enter-captcha)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # App.jar
 
@@ -375,7 +375,7 @@ network{VqaSWwIIzxlBNdNjWkgA}
 
 # File Transfer
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/file-transfer)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # I Can See You # 1
 
@@ -443,7 +443,7 @@ root
 
 # I Can See You # 4
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/i-can-see-you-4)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # I Can See You # 5
 
@@ -463,7 +463,7 @@ note.txt
 
 # I Can See You # 6
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/i-can-see-you-6)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # My legacy application was hacked # 1
 
@@ -484,11 +484,11 @@ forensic{6b6ec76ffb5c8922a34e4ef6f4fe39b4e7ebca7e7efe6252dbbe7d4252fc1a1e}
 
 # My legacy application was hacked # 2
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/my-legacy-application-was-hacked-2)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # My legacy application was hacked # 3
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/my-legacy-application-was-hacked-3)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # AI Prompt Injection # 1
 
@@ -529,7 +529,7 @@ ai{t5P0uGuBzQ}
 
 # Can You Tell Me the Secret
 
-- Solved by c0ffeeOverdose : [link](https://pssl.noonomyen.com/medium/c0ffeeOverdos/3933448615fc/can-you-tell-me-the-secret)
+- Solved by c0ffeeOverdose : [link](https://medium.com/@c0ffeeOverdose/secplayground-hackloween-ctf-2024-write-up-dont-know-everything-3933448615fc)
 
 # Stand by Me
 
