@@ -395,7 +395,6 @@ Flag `flag{b7e986bdb0af75c1317f6d433588738f}`
 ![34.png](./images/34.png)
 
 ```text
-win_offset = 0x11d2
 rt_main = 0x0000555555555591
 rt_return_to_main = 0x0000555555555611
 diff = 128
