@@ -2,6 +2,7 @@
 title: IT RERU CYBER HACKATHON 2026 - 2 (Senior)
 published: 2026-08-08
 description: "Write-ups การแข่งขัน IT RERU CYBER HACKATHON 2026 #2 (Senior)"
+image: "images/0.png"
 tags: ["CTF Writeup", "Don't Know Everything Team", "IT RERU CYBER HACKATHON", "2026"]
 category: "CTF Writeup"
 draft: false
