@@ -162,6 +162,7 @@ export default defineConfig({
 	},
 	vite: {
 		build: {
+			cssMinify: "esbuild",
 			rollupOptions: {
 				onwarn(warning, warn) {
 					// temporarily suppress this warning
