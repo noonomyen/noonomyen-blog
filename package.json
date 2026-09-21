@@ -27,7 +27,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.3.1",
-    "@astrojs/node": "^11.1.5",
+    "@astrojs/node": "^11.1.6",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/svelte": "9.0.1",
@@ -45,7 +45,7 @@
     "@iconify/svelte": "^5.2.2",
     "@swup/astro": "^1.8.0",
     "@tailwindcss/typography": "^0.5.20",
-    "astro": "^7.3.2",
+    "astro": "^7.3.3",
     "astro-expressive-code": "^0.44.2",
     "astro-icon": "^1.2.0",
     "elysia": "^1.4.30",
@@ -75,8 +75,8 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.11",
-    "@biomejs/biome": "2.5.13",
+    "@astrojs/ts-plugin": "^1.10.12",
+    "@biomejs/biome": "2.5.14",
     "@rollup/plugin-yaml": "^5.0.0",
     "@types/bun": "^1.4.2",
     "@types/hast": "^3.0.5",
