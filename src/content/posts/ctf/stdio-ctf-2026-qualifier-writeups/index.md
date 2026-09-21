@@ -9,7 +9,7 @@ draft: false
 lang: "en"
 ---
 
-Write-ups การแข่งขัน STDiO CTF 2026 รอบ Qualifier
+Write-ups of noonomyen in STDiO CTF 2026 Qualification round
 
 # Challenges
 
@@ -30,7 +30,7 @@ Write-ups การแข่งขัน STDiO CTF 2026 รอบ Qualifier
 
 ![1.png](./images/1.png)
 
-Follow hint:  Hex > Base64 > Reverse > Binary > ROT13.
+Follow hint: Hex > Base64 > Reverse > Binary > ROT13.
 
 Fragment 1: `M3M0RY_0F_TH3_H31R`
 
@@ -76,7 +76,7 @@ Key and fragment is in the source file.
 
 Fragment 7: `N31TH3R_C4N_L1V3`
 
-### Step 8: Collect all fragment to get encrypted flag
+### Step 8: Collect all fragments to get encrypted flag
 
 ![8.png](./images/8.png)
 
@@ -147,7 +147,7 @@ If the first connection SLEEP and DIVE and second connection run WAKE you will g
 So will it be possible to make race conditions?
 
 - A: SLEEP
-- B: WAKE and hole subject name input
+- B: WAKE and hold subject name input
 - A: DIVE
 - B: type enter
 
@@ -209,7 +209,7 @@ Found file `onirism` is owned by user2.
 
 ![21.png](./images/21.png)
 
-And this elf file has SUID/SGID, will privilege escalation to user2?
+And this elf file has SUID/SGID, will privilege escalate to user2?
 
 ![22.png](./images/22.png)
 
@@ -231,13 +231,13 @@ FUN_00401000 calling to FUN_00401110
 
 ![26.png](./images/26.png)
 
-FUN_00401110 is read data from STDIN
+FUN_00401110 reads data from STDIN
 
 - EAX = 0 (system call read)
 
 Buffer allocates 72 bytes, but reads 104 bytes, now this is stack overflow.
 
-Other function calling system call
+Other functions calling system calls
 
 - FUN_00401120 - 0x1 write
 - FUN_00401130 - 0x9d prctl
@@ -393,7 +393,7 @@ Target of challenge is fetch flag from /api/flag, with role super_admin
 
 So this code is normally, a new user will get a role user, admin user is random password.
 
-How do you role super_admin?
+How do you get role super_admin?
 
 It looks like the admin can set a super_admin role for the user but not allow it.
 
@@ -429,7 +429,7 @@ What if username is like this
 j:"admin"
 ```
 
-The parser will parsing it to
+The parser will parse it to
 
 ```text
 admin
@@ -449,7 +449,7 @@ Back to promote api
 
 ![35.png](./images/35.png)
 
-Not allow admin set super_admin role, but `role` is store in cookie session same `user`, just use the same method.
+Not allow admin set super_admin role, but `role` is stored in cookie session same as `user`, just use the same method.
 
 ### Step 3: Exploit
 
@@ -583,7 +583,7 @@ So this pcap file doesn't have the password of this database file, try brute-for
 
 ![53.png](./images/53.png)
 
-Founded with rockyou wordlist.
+Found with rockyou wordlist.
 
 Answer: `butterfly1`
 
@@ -591,13 +591,13 @@ Answer: `butterfly1`
 
 What tunneling tool was deployed, and what port does it connect to? (Format: toolname:port)
 
-Found diag.exe  executed with flag -connect.
+Found diag.exe executed with flag -connect.
 
-Port 11601 is like lingolo-ng.
+Port 11601 is like ligolo-ng.
 
 ![54.png](./images/54.png)
 
-For confirmation export diag.exe to check, this file is golang and the module list with go tool will find the module of lingolo-ng.
+For confirmation export diag.exe to check, this file is golang and the module list with go tool will find the module of ligolo-ng.
 
 ![55.png](./images/55.png)
 
@@ -621,7 +621,7 @@ Answer: `health.exe,20260730063148_BloodHound.zip`
 
 What account was used to authenticate to the Domain Controller after the tunnel was established? (Format: username only)
 
-Domain controller, focus to LDAP and lingolo-ng is started at time 1089 sec.
+Domain controller, focus to LDAP and ligolo-ng is started at time 1089 sec.
 
 ![58.png](./images/58.png)
 
@@ -651,7 +651,7 @@ WOWZA.LOCAL\svc_websync
 
 ![62.png](./images/62.png)
 
-Answer: `WOWZA.LOCAL\svc_backup,WOWZA.LOCAL\svc_sqlreport,WOWZA.LOCAL\svc_websync`
+Answer: `WOWZA.LOCAL\\svc_backup,WOWZA.LOCAL\\svc_sqlreport,WOWZA.LOCAL\\svc_websync`
 
 ### Step 13: Question 13
 
@@ -910,7 +910,7 @@ Answer: `https_teams.live.com_0.indexeddb.leveldb`
 
 After analyzing that file and finding evidence of the chat, what company is mentioned as the creator of QRQR?
 
-[https://github.com/google/dfindexeddb](https://github.com/google/dfindexeddb) tool for parsing indexeddb /  leveldb
+[https://github.com/google/dfindexeddb](https://github.com/google/dfindexeddb) tool for parsing indexeddb / leveldb
 
 ![71.png](./images/71.png)
 
